@@ -19,16 +19,31 @@ class CSVProcessor:
         'this_week_american'
     ]
 
-    def __init__(self, file_path: str):
-        """Initialize processor with CSV file path"""
+    def __init__(self, file_path: str = None, file_object=None):
+        """
+        Initialize processor with CSV file path or file object
+
+        Args:
+            file_path: Path to CSV file (for local files)
+            file_object: File-like object (for uploads in serverless environments)
+        """
         self.file_path = file_path
+        self.file_object = file_object
         self.df = None
         self.validation_errors = []
 
     def load_csv(self) -> bool:
-        """Load CSV file into dataframe"""
+        """Load CSV file into dataframe from path or file object"""
         try:
-            self.df = pd.read_csv(self.file_path)
+            if self.file_object is not None:
+                # Process from file object (uploaded file)
+                self.df = pd.read_csv(self.file_object)
+            elif self.file_path is not None:
+                # Process from file path (local file)
+                self.df = pd.read_csv(self.file_path)
+            else:
+                self.validation_errors.append("No file path or file object provided")
+                return False
             return True
         except Exception as e:
             self.validation_errors.append(f"Failed to load CSV: {str(e)}")

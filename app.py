@@ -57,13 +57,11 @@ def upload_file():
         return jsonify({'error': 'Only CSV files allowed'}), 400
 
     try:
-        # Save file
         filename = secure_filename(file.filename)
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(filepath)
 
-        # Process CSV
-        processor = CSVProcessor(filepath)
+        # Process CSV directly from memory (no disk write needed)
+        # This works in serverless environments like Vercel
+        processor = CSVProcessor(file_object=file)
         if not processor.process():
             errors = processor.get_errors()
             return jsonify({'error': f'CSV processing failed: {", ".join(errors)}'}), 400
@@ -164,7 +162,7 @@ def generate_tweets():
 
 @app.route('/api/export', methods=['POST'])
 def export_results():
-    """Export generated tweets to JSON file"""
+    """Export generated tweets to JSON (returns data directly for serverless compatibility)"""
     if current_data['results'] is None:
         return jsonify({'error': 'No results to export. Please generate tweets first.'}), 400
 
@@ -172,9 +170,8 @@ def export_results():
         # Create filename with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         filename = f'tweets_{timestamp}.json'
-        filepath = os.path.join(config.EXPORT_FOLDER, filename)
 
-        # Export data
+        # Prepare export data
         export_data = {
             'generated_at': datetime.now().isoformat(),
             'source_file': current_data['filename'],
@@ -182,13 +179,12 @@ def export_results():
             'results': current_data['results']
         }
 
-        with open(filepath, 'w') as f:
-            json.dump(export_data, f, indent=2)
-
+        # In serverless environments (Vercel), return data directly
+        # User can save the JSON from the response
         return jsonify({
             'success': True,
             'filename': filename,
-            'path': filepath
+            'data': export_data
         })
 
     except Exception as e:

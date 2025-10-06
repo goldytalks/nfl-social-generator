@@ -153,7 +153,18 @@ async function exportResults() {
         const data = await response.json();
 
         if (data.success) {
-            showStatus(exportStatus, `✓ Exported to ${data.filename}`, 'success');
+            // Download the JSON file
+            const blob = new Blob([JSON.stringify(data.data, null, 2)], { type: 'application/json' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = data.filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            showStatus(exportStatus, `✓ Downloaded ${data.filename}`, 'success');
         } else {
             showStatus(exportStatus, `Error: ${data.error}`, 'error');
         }
