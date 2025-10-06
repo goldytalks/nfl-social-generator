@@ -351,6 +351,27 @@ nfl-social-generator/
 
 ---
 
+### Version 1.2.1 - January 2025 ✅ COMPLETED
+**Tweet Generation Fix**
+
+#### Fixed
+- **Critical**: Tweet generation failing with 'tuple' object has no attribute 'get'
+- Removed trailing commas from template class attributes
+- `PLAYOFFS_TEMPLATES` and `MVP_TEMPLATES` were tuples instead of dicts
+- Caused by Python syntax: `DICT = {...},` creates a 1-element tuple
+
+#### What Happened
+- Trailing commas after closing braces made Python interpret the dictionaries as tuples
+- When code called `.get()` method, it failed because tuples don't have that method
+- This broke the entire tweet generation step
+
+#### Resolution
+- Removed commas after closing braces in templates.py
+- All templates now properly formatted as dictionaries
+- Tweet generation fully functional
+
+---
+
 ## 🔧 TECHNICAL NOTES
 
 ### CSV Data Format Requirements
