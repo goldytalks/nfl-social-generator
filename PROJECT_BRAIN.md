@@ -320,6 +320,37 @@ nfl-social-generator/
 
 ---
 
+### Version 1.2.0 - January 2025 ✅ COMPLETED
+**Flexible CSV Format Support + Auto-Analysis**
+
+#### Added
+- **Flexible CSV column mapping** - Supports multiple CSV formats
+- **Auto-analysis** - Automatically analyzes movers after upload
+- **Team name cleaning** - Removes suffixes like "TO_MAKE_THE_PLAYOFFS"
+- **Better error messages** - Shows available columns when validation fails
+
+#### Fixed
+- **Critical**: CSV upload failing due to column name mismatch
+- Now supports both formats:
+  - Original: `market`, `team_player`, `change_pct`, etc.
+  - Novig Export: `Market`, `Team/Player`, `Change in % Odds (WoW)`, etc.
+- Handles percentage values with `%` signs (e.g., "14.49%")
+- Cleans `+` signs from odds and percentages
+
+#### UX Improvements
+- Upload → Auto-analyze → Show results (no manual button click)
+- Button changed to "Re-Analyze with New Settings"
+- UI shows "(Auto-analyzes after upload)" hint
+- Smoother workflow: 1 click instead of 2
+
+#### Technical Details
+- `COLUMN_MAPPING` dict in CSVProcessor
+- `normalize_columns()` method before validation
+- Enhanced `clean_data()` to handle % signs and team suffixes
+- Frontend auto-triggers analysis 500ms after upload success
+
+---
+
 ## 🔧 TECHNICAL NOTES
 
 ### CSV Data Format Requirements
