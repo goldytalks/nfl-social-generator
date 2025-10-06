@@ -291,10 +291,12 @@ nfl-social-generator/
 - **Automatic Deployments**: On push to main (after Vercel setup)
 
 #### Repository Details
-- **URL**: https://github.com/goldytalks/nfl-social-generator
+- **GitHub URL**: https://github.com/goldytalks/nfl-social-generator
+- **Live URL**: https://nfl-social-generator-4jmtrtnla-goldyverse.vercel.app
 - **Branch**: main
 - **Visibility**: Public
 - **Initial Commit**: January 2025
+- **Deployed**: January 2025 ✅
 
 ---
 
@@ -668,7 +670,8 @@ git push origin main
 **Developer**: Jacob G
 **Platform**: Novig
 **Repository**: https://github.com/goldytalks/nfl-social-generator
-**Deployment**: [Deploy via Vercel - see DEPLOYMENT.md]
+**Live URL**: https://nfl-social-generator-4jmtrtnla-goldyverse.vercel.app
+**Deployment**: Vercel (Production)
 
 ---
 
