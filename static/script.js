@@ -62,6 +62,9 @@ async function uploadFile() {
             displayDataSummary(data.summary);
             state.dataLoaded = true;
             analyzeBtn.disabled = false;
+
+            // Automatically analyze movers after upload
+            setTimeout(() => analyzeMovers(), 500);
         } else {
             showStatus(uploadStatus, `Error: ${data.error}`, 'error');
         }

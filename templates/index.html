@@ -26,7 +26,7 @@
 
         <!-- Step 2: Analyze Movers -->
         <section class="card" id="analyze-section">
-            <h2>Step 2: Identify Biggest Movers</h2>
+            <h2>Step 2: Identify Biggest Movers <span style="font-size: 0.8rem; color: #6c757d;">(Auto-analyzes after upload)</span></h2>
             <div class="settings">
                 <label>
                     Movement Threshold (%):
@@ -37,7 +37,7 @@
                     <input type="number" id="top-n-input" value="10" step="1" min="1" max="50" />
                 </label>
             </div>
-            <button id="analyze-btn" class="btn btn-primary" disabled>Analyze Movers</button>
+            <button id="analyze-btn" class="btn btn-primary" disabled>Re-Analyze with New Settings</button>
             <div id="analyze-status" class="status-message"></div>
             <div id="movers-summary" class="summary hidden"></div>
             <div id="movers-table" class="table-container hidden"></div>
