@@ -50,7 +50,7 @@ class TweetTemplates:
                 'template': 'Sharp movement detected: {team} playoff probability down {change:.1f}%\n\n{context}\n\nOur odds reflect the reality. {emoji}\n\n#NFL'
             }
         ]
-    },
+    }
 
     # Templates for MVP market
     MVP_TEMPLATES = {
@@ -82,7 +82,7 @@ class TweetTemplates:
                 'template': '{player}\'s MVP odds dropped {change:.1f}% this week.\n\n{context}\n\nThe race evolves. {emoji}\n\n#NFL #MVP'
             }
         ]
-    },
+    }
 
     # Templates for Super Bowl / Conference Champion markets
     CHAMPIONSHIP_TEMPLATES = {
