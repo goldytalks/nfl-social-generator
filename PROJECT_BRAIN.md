@@ -267,27 +267,34 @@ nfl-social-generator/
 
 ---
 
-### Version 1.1.0 - January 2025 (In Progress)
+### Version 1.1.0 - January 2025 ✅ COMPLETED
 **Web Hosting & Deployment**
 
 #### Added
 - Vercel deployment configuration (vercel.json)
 - Production-ready Flask settings
 - Gunicorn WSGI server
-- GitHub repository integration
+- GitHub repository integration (https://github.com/goldytalks/nfl-social-generator)
 - .gitignore for Python/Flask
-- Environment variable support (.env)
-- Deployment documentation
+- Environment variable support (.env + .env.example)
+- Comprehensive deployment documentation (DEPLOYMENT.md)
+- Updated README with deployment instructions
 
 #### Changed
-- Updated requirements.txt for production
+- Updated requirements.txt for production (added gunicorn, python-dotenv)
 - Modified config.py for environment-based settings
 - Added .gitkeep files for empty directories
 
 #### Deployment Stack
-- GitHub for version control
-- Vercel for serverless hosting
-- Automatic deployments on push to main
+- **GitHub**: Version control + code hosting
+- **Vercel**: Serverless hosting (ready to deploy)
+- **Automatic Deployments**: On push to main (after Vercel setup)
+
+#### Repository Details
+- **URL**: https://github.com/goldytalks/nfl-social-generator
+- **Branch**: main
+- **Visibility**: Public
+- **Initial Commit**: January 2025
 
 ---
 
@@ -658,10 +665,10 @@ git push origin main
 
 ### Support Contacts
 
-**Developer**: [Your Name]
+**Developer**: Jacob G
 **Platform**: Novig
-**Repository**: github.com/[username]/nfl-social-generator
-**Deployment**: [vercel-url].vercel.app
+**Repository**: https://github.com/goldytalks/nfl-social-generator
+**Deployment**: [Deploy via Vercel - see DEPLOYMENT.md]
 
 ---
 

@@ -2,6 +2,31 @@
 
 Automated social media content generation for NFL futures odds movement. Built for Novig sports betting platform.
 
+[![GitHub](https://img.shields.io/badge/GitHub-nfl--social--generator-blue?logo=github)](https://github.com/goldytalks/nfl-social-generator)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/goldytalks/nfl-social-generator)
+
+## 🌐 Deployment
+
+**GitHub Repository:** [github.com/goldytalks/nfl-social-generator](https://github.com/goldytalks/nfl-social-generator)
+
+**Live Demo:** Coming soon! (Deploy via Vercel - see [DEPLOYMENT.md](DEPLOYMENT.md))
+
+**Quick Deploy:**
+```bash
+# Clone the repo
+git clone https://github.com/goldytalks/nfl-social-generator.git
+cd nfl-social-generator
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run locally
+python app.py
+# Visit http://localhost:5000
+```
+
+See **[DEPLOYMENT.md](DEPLOYMENT.md)** for complete deployment instructions to Vercel.
+
 ## Overview
 
 This tool automates the process of identifying significant odds movements in NFL futures markets and generating compelling tweet drafts that showcase market intelligence. It turns raw odds data into ready-to-post social content.
