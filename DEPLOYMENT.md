@@ -373,9 +373,10 @@ jobs:
 
 **Deployment Date:** January 2025 ✅
 **Deployed By:** Jacob G
-**Live URL:** https://nfl-social-generator-4jmtrtnla-goldyverse.vercel.app
+**Live URL:** https://nfl-social-generator.vercel.app
 **GitHub:** https://github.com/goldytalks/nfl-social-generator
 **Status:** Production Ready 🚀
+**Auto-Deploy:** Enabled (GitHub → Vercel)
 
 ---
 

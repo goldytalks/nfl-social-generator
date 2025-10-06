@@ -292,11 +292,31 @@ nfl-social-generator/
 
 #### Repository Details
 - **GitHub URL**: https://github.com/goldytalks/nfl-social-generator
-- **Live URL**: https://nfl-social-generator-4jmtrtnla-goldyverse.vercel.app
+- **Live URL**: https://nfl-social-generator.vercel.app
 - **Branch**: main
 - **Visibility**: Public
 - **Initial Commit**: January 2025
 - **Deployed**: January 2025 ✅
+- **Auto-Deploy**: Enabled (push to main → automatic Vercel deployment)
+
+---
+
+### Version 1.1.1 - January 2025 ✅ COMPLETED
+**Serverless Compatibility Fix**
+
+#### Fixed
+- **Critical**: Read-only filesystem error on Vercel
+- Updated CSVProcessor to process files in-memory (no disk writes)
+- Modified upload endpoint to accept file objects directly
+- Updated export to return JSON data for client-side download
+- App now fully functional in serverless environments
+
+#### Technical Changes
+- `CSVProcessor.__init__()` now accepts `file_object` parameter
+- `CSVProcessor.load_csv()` reads from file object or file path
+- `/api/upload` processes CSV directly from request without saving
+- `/api/export` returns JSON data in response (browser downloads)
+- Works in both local development and production (Vercel)
 
 ---
 
@@ -670,7 +690,7 @@ git push origin main
 **Developer**: Jacob G
 **Platform**: Novig
 **Repository**: https://github.com/goldytalks/nfl-social-generator
-**Live URL**: https://nfl-social-generator-4jmtrtnla-goldyverse.vercel.app
+**Live URL**: https://nfl-social-generator.vercel.app
 **Deployment**: Vercel (Production)
 
 ---

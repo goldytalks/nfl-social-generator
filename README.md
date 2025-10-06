@@ -9,7 +9,7 @@ Automated social media content generation for NFL futures odds movement. Built f
 
 **GitHub Repository:** [github.com/goldytalks/nfl-social-generator](https://github.com/goldytalks/nfl-social-generator)
 
-**🌐 Live Demo:** [nfl-social-generator-4jmtrtnla-goldyverse.vercel.app](https://nfl-social-generator-4jmtrtnla-goldyverse.vercel.app)
+**🌐 Live Demo:** [nfl-social-generator.vercel.app](https://nfl-social-generator.vercel.app)
 
 **Quick Deploy:**
 ```bash
